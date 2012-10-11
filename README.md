@@ -1,8 +1,9 @@
-My Require.js setup for Java projects
-=====================================
+Example JavaScript setup for Java projects
+==========================================
 
 This is a sample setup of a Java project using
-[Require.js](http://requirejs.org/).
+[Require.js](http://requirejs.org/) and
+[Backbone.js](http://backbonejs.org).
 
 Minify
 ------
@@ -19,6 +20,15 @@ minified code. Almond is also created by [James
 Burke](https://github.com/jrburke), the creator of Require.js, and is a
 minimal AMD API implementation with a minified and gzipped size of about
 1 kilobyte,
+
+The minified JavaScript code is put in `src/main/webapp/build/app.js`.
+To ensure that everything is working, open
+`src/main/webapp/build/index.html` in the browser. We only need to
+include `app.js` when the code is minified, i.e.
+
+```html
+<script type="text/javascript" src="app.js"></script>
+```
 
 ### Minify with Node.js
 
