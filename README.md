@@ -1,5 +1,5 @@
-My Require.js setup
-===================
+My Require.js setup for Java projects
+=====================================
 
 This is a sample setup of a Java project using
 [Require.js](http://requirejs.org/).
