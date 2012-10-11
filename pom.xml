@@ -1,0 +1,47 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.kjbekkelund</groupId>
+  <artifactId>requirejs-setup</artifactId>
+  <version>0.0.1</version>
+  <name>RequireJS setup for Java</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.github.mcheely</groupId>
+        <artifactId>requirejs-maven-plugin</artifactId>
+        <version>1.0.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>optimize</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- path to optimizer json config file -->
+          <configFile>
+            ${basedir}/src/main/config/buildconfig.js
+          </configFile>
+          <!-- optional path to optimizer executable -->
+          <optimizerFile>
+            ${basedir}/src/main/scripts/r.js
+          </optimizerFile>
+          <!-- whether or not to process config with maven filters -->
+          <filterConfig>
+            false
+          </filterConfig>
+          <!-- Skip requirejs optimization if true -->
+          <skip>
+            false
+          </skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
