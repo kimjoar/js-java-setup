@@ -19,7 +19,7 @@ instead of Require.js, as a full AMD loader is not needed for the
 minified code. Almond is also created by [James
 Burke](https://github.com/jrburke), the creator of Require.js, and is a
 minimal AMD API implementation with a minified and gzipped size of about
-1 kilobyte,
+1 kilobyte.
 
 The minified JavaScript code is put in `src/main/webapp/build/app.js`.
 To ensure that everything is working, open
