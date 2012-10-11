@@ -37,3 +37,6 @@ This setup can also be minified using Node.js:
 ```
 node src/main/scripts/r.js -o src/main/config/buildconfig.js optimize=uglify
 ```
+
+(Better for debugging, as it usually yields far better error messages
+than those produced when Java is used to minify the code.)
