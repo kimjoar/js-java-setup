@@ -10,7 +10,7 @@ Minify
 The code is minified by using the
 [requirejs-maven-plugin](https://github.com/mcheely/requirejs-maven-plugin)
 to call [r.js](https://github.com/jrburke/r.js) with the build config
-specified in the
+specified in
 [buildconfig.js](https://github.com/kjbekkelund/requirejs-java/blob/master/src/main/config/buildconfig.js).
 
 The minified code uses [Almond](https://github.com/jrburke/almond)
