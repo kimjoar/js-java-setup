@@ -11,6 +11,7 @@
     preserveLicenseComments: true,
     logLevel: 0,
     stubModules: ['text', 'hgn'],
+    optimize: 'closure',
     pragmasOnSave: {
         // exclude compiler logic from Hogan.js
         excludeHogan: true
