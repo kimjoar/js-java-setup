@@ -2,7 +2,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
   var EventBinder = function() {
     this.eventBindings = [];
-  }
+  };
 
   _.extend(EventBinder.prototype, {
     bindTo: function (obj, eventName, callback, context) {
