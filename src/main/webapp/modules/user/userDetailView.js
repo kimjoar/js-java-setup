@@ -6,6 +6,8 @@ define(['base/view', 'hgn!modules/user/userDetail'], function(BaseView, userDeta
 
     render: function() {
       this.renderTemplate();
+
+      return this;
     }
 
   });

@@ -18,9 +18,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
       return subViewAlreadyExists;
     },
     destroyAllSubViews: function() {
-      _.each(this.subViews, function(subView) {
-        subView.destroy();
-      });
+      _.invoke(this.subViews,  "destroy");
 
       this.subViews.length = 0;
     }
