@@ -4,34 +4,34 @@ define([
     'underscore',
     'component/eventBinder',
     'component/subViewHandler'
-  ],
-  function($, Backbone, _, EventBinder, SubViewHandler) {
+],
+    function($, Backbone, _, EventBinder, SubViewHandler) {
 
-  var View = Backbone.View.extend({
+        var View = Backbone.View.extend({
 
-    constructor: function() {
-      var eventBinder = new EventBinder();
-      var subViewHandler = new SubViewHandler();
-      _.extend(this, eventBinder);
-      _.extend(this, subViewHandler);
+            constructor: function() {
+                var eventBinder = new EventBinder();
+                var subViewHandler = new SubViewHandler();
+                _.extend(this, eventBinder);
+                _.extend(this, subViewHandler);
 
-      Backbone.View.prototype.constructor.apply(this, arguments);
-    },
+                Backbone.View.prototype.constructor.apply(this, arguments);
+            },
 
-    destroy: function() {
-      this.unbindAll();
-      this.remove();
-      this.destroyAllSubViews();
-    },
+            destroy: function() {
+                this.unbindAll();
+                this.remove();
+                this.destroyAllSubViews();
+            },
 
-    renderTemplate: function(data) {
-      if (!_.isFunction(this.template)) return;
-      var html = this.template(data);
-      this.$el.html(html);
-    }
+            renderTemplate: function(data) {
+                if (!_.isFunction(this.template)) return;
+                var html = this.template(data);
+                this.$el.html(html);
+            }
 
-  });
+        });
 
-  return View;
+        return View;
 
-});
+    });

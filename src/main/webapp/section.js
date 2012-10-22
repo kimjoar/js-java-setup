@@ -1,36 +1,36 @@
 define(['underscore'], function(_) {
 
-  var Section = function($baseEl, selector) {
-    this.$baseEl = $baseEl;
-    this.selector = selector;
-  };
+    var Section = function($baseEl, selector) {
+        this.$baseEl = $baseEl;
+        this.selector = selector;
+    };
 
-  _.extend(Section.prototype, {
-    show: function(view) {
-      this.ensureEl();
-      this.open(view);
-      this.currentView = view;
-    },
+    _.extend(Section.prototype, {
+        show: function(view) {
+            this.ensureEl();
+            this.open(view);
+            this.currentView = view;
+        },
 
-    ensureEl: function() {
-      if (!this.$el || this.$el.length === 0) {
-        this.$el = this.$baseEl.find(this.selector);
-      }
-    },
+        ensureEl: function() {
+            if (!this.$el || this.$el.length === 0) {
+                this.$el = this.$baseEl.find(this.selector);
+            }
+        },
 
-    open: function(view) {
-      this.$el.html(view.el);
-    },
+        open: function(view) {
+            this.$el.html(view.el);
+        },
 
-    close: function() {
-      if (!this.currentView) return;
+        close: function() {
+            if (!this.currentView) return;
 
-      this.currentView.destroy();
+            this.currentView.destroy();
 
-      delete this.currentView;
-    }
-  });
+            delete this.currentView;
+        }
+    });
 
-  return Section;
+    return Section;
 
 });

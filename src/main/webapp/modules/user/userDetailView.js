@@ -1,17 +1,17 @@
 define(['base/view', 'hgn!modules/user/userDetail'], function(BaseView, userDetailTemplate) {
 
-  var UserDetailView = BaseView.extend({
+    var UserDetailView = BaseView.extend({
 
-    template: userDetailTemplate,
+        template: userDetailTemplate,
 
-    render: function() {
-      this.renderTemplate();
+        render: function() {
+            this.renderTemplate();
 
-      return this;
-    }
+            return this;
+        }
 
-  });
+    });
 
-  return UserDetailView;
+    return UserDetailView;
 
 });
