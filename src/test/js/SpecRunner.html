@@ -16,6 +16,16 @@
     // Eval is needed because spec variable can be NOTHING, and the output will be ; and break the javascript
     var specs = eval($specs$);
 
+    if ("$reporter$" === "JsApiReporter") {
+        // mvn test
+        testPath = "../../../src/";
+    } else {
+        // mvn jasmine:bdd
+        testPath = "../../";
+    }
+
+    testPath += "test/js/";
+
     var requireConfig = {
         baseUrl: '$sourceDir$',
         paths: {
@@ -24,7 +34,9 @@
             'backbone': 'vendor/backbone',
             'hogan': 'vendor/hogan',
             'hgn': 'vendor/plugin/hgn',
-            'text': 'vendor/plugin/text'
+            'text': 'vendor/plugin/text',
+            'sinon': testPath + 'vendor/sinon-1.5.0',
+            'jasmine_sinon': testPath + 'vendor/jasmine-sinon'
         },
 
         shim: {
@@ -34,6 +46,10 @@
             'backbone': {
                 deps: ['underscore', 'jquery'],
                 exports: 'Backbone'
+            },
+            'sinon': {
+                deps: ['jasmine_sinon'],
+                exports: 'sinon'
             }
         }
     };
