@@ -6,8 +6,9 @@ This is an opinionated sample setup of a Java project which uses:
 * [Require.js](http://requirejs.org/) for loading modules
 * [Backbone.js](http://backbonejs.org) models, views and routers
 * [Jasmine](http://pivotal.github.com/jasmine/) for tests
-* [Hogan.js](http://twitter.github.com/hogan.js/) for precompilable
-  [Mustache](http://mustache.github.com/) templates.
+* [Hogan.js](http://twitter.github.com/hogan.js/) for
+  [Mustache](http://mustache.github.com/) templates that can be
+  precompiled to JavaScript in production
 
 Modules
 -------
