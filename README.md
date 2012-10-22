@@ -110,8 +110,9 @@ This toolchain has been set up by [@kjbekkelund](http://kimjoar.net) and
 amount of gratitude for the amazing work of the developers of the code
 used in this toolchain. You make the Java world far more bearable.
 
+Code licensed under the MIT License.
+
 TODO
 ====
 
 * Test Coverage
-* License
