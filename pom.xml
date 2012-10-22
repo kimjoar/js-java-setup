@@ -88,6 +88,11 @@
                         <pattern>.+Spec\.js</pattern>
                     </noInstrumentPatterns>
                     <outputDir>${project.build.directory}/coverage</outputDir>
+                    <sourcesToPreload>
+                      **/modules/**/*.js,
+                      **/component/**/*.js,
+                      **/base/**/*.js
+                    </sourcesToPreload>
                 </configuration>
             </plugin>
         </plugins>
