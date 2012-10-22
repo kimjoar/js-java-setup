@@ -53,8 +53,7 @@ require(['hgn!foo'], function(foo) {
 ```
 
 During optimization the templates will be pre-compiled and stored as
-pure JavaScript for better performance. This is done automatically in
-our setup, so no further job is needed to get pre-compiled templates.
+pure JavaScript for better performance.
 
 Minify
 ------
@@ -89,5 +88,5 @@ This setup can also be minified using Node.js:
 node src/main/scripts/r.js -o src/main/config/buildconfig.js optimize=uglify
 ```
 
-(Better for debugging, as it usually yields far better error messages
-than those produced when Java is used to minify the code.)
+(This is better for debugging, as it usually yields far better error
+messages than those produced when Java is used to minify the code.)
