@@ -1,17 +1,66 @@
 Example JavaScript setup for Java projects
 ==========================================
 
-This is a sample setup of a Java project using
-[Require.js](http://requirejs.org/) and
-[Backbone.js](http://backbonejs.org).
+This is an opinionated sample setup of a Java project which uses:
+
+* [Require.js](http://requirejs.org/) for loading modules
+* [Backbone.js](http://backbonejs.org) models, views and routers
+* [Jasmine](http://pivotal.github.com/jasmine/) for tests
+* [Hogan.js](http://twitter.github.com/hogan.js/) for precompilable
+  [Mustache](http://mustache.github.com/) templates.
+
+Modules
+-------
+
+Components
+----------
+
+Templates
+---------
+
+To easily include plugins we use a
+[Require.js Hogan plugin](https://github.com/millermedeiros/requirejs-hogan-plugin). 
+
+Lets say we create the following Mustache file, `foo.mustache`:
+
+```mustache
+<div class="foo">
+    <h1>{{title}}</h1>
+    <ul>
+        {{#names}}
+        <li>{{.}}</li>
+        {{/names}}
+    </ul>
+</div>
+```
+
+We can then load it using the `hgn` command:
+
+```javascript
+// this will load the "foo.mustache" file
+require(['hgn!foo'], function(foo) {
+    // the plugin returns the `render()` method of the `Hogan.Template`
+
+    var markup = foo({
+        title : 'Hello!',
+        names : ['world', 'foo bar', 'lorem ipsum']
+    });
+
+    console.log(markup);
+});
+```
+
+During optimization the templates will be pre-compiled and stored as
+pure JavaScript for better performance. This is done automatically in
+our setup, so no further job is needed to get pre-compiled templates.
 
 Minify
 ------
 
 The code is minified by using the
-[requirejs-maven-plugin](https://github.com/mcheely/requirejs-maven-plugin)
-to call [r.js](https://github.com/jrburke/r.js) with the build config
-specified in
+[requirejs-maven-plugin](https://github.com/mcheely/requirejs-maven-plugin).
+The plugin uses [r.js](https://github.com/jrburke/r.js) with the 
+buildconfig specified in
 [buildconfig.js](https://github.com/kjbekkelund/requirejs-java/blob/master/src/main/config/buildconfig.js).
 
 The minified code uses [Almond](https://github.com/jrburke/almond)
