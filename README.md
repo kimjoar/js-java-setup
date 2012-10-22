@@ -6,7 +6,7 @@ works in an all-Java environment, and it shows that good JavaScript
 toolchains are possible even without Node.js.
 
 We have used a setup similar to this in several large-scale JavaScript
-applications at some of the largest companies in Norway.
+applications for some of the largest companies in Norway.
 
 Hopefully this will make your JavaScript development a whole lot easier
 when there's only Java all around.
