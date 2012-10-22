@@ -1,5 +1,18 @@
-Example JavaScript setup for Java projects
-==========================================
+Efficient JavaScript development in a Java world
+================================================
+
+Node.js is not always a possibility. This is a JavaScript setup that
+works in an all-Java environment, and it shows that good JavaScript
+toolchains are possible even without Node.js.
+
+We have used a setup similar to this in several large-scale JavaScript
+applications at some of the largest companies in Norway.
+
+Hopefully this will make your JavaScript development a whole lot easier
+when there's only Java all around.
+
+The Toolchain
+-------------
 
 This is an opinionated sample setup of a Java project which uses:
 
@@ -13,6 +26,7 @@ This is an opinionated sample setup of a Java project which uses:
 * [Jasmine](http://pivotal.github.com/jasmine/) for tests
 * [Sinon](http://sinonjs.org) for test spies, stubs and mocks
 * [Saga](http://timurstrekalov.github.com/saga/) for code coverage
+
 
 Templates
 ---------
@@ -88,9 +102,16 @@ node src/main/scripts/r.js -o src/main/config/buildconfig.js optimize=uglify
 (This is better for debugging, as it usually yields far better error
 messages than those produced when Java is used to minify the code.)
 
+Created by
+----------
+
+This toolchain has been set up by [@kjbekkelund](http://kimjoar.net) and
+[@hinderberg](http://hinderberg.no/). However, we owe an enourmous
+amount of gratitude for the amazing work of the developers of the code
+used in this toolchain. You make the Java world far more bearable.
+
 TODO
 ====
 
-* Test Coverage (only shows files that are included in the _tests_)
-* Created by
+* Test Coverage
 * License
