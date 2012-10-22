@@ -4,6 +4,8 @@ Example JavaScript setup for Java projects
 This is an opinionated sample setup of a Java project which uses:
 
 * [Require.js](http://requirejs.org/) for loading modules
+* [r.js](http://requirejs.org/docs/optimization.html) for minified files
+  in production
 * [Backbone.js](http://backbonejs.org) models, views and routers
 * [Hogan.js](http://twitter.github.com/hogan.js/) for
   [Mustache](http://mustache.github.com/) templates that can be
