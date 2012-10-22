@@ -4,19 +4,20 @@ Example JavaScript setup for Java projects
 This is an opinionated sample setup of a Java project which uses:
 
 * [Require.js](http://requirejs.org/) for loading modules
-* [r.js](http://requirejs.org/docs/optimization.html) for minified files
-  in production
-* [Backbone.js](http://backbonejs.org) models, views and routers
+* [r.js](http://requirejs.org/docs/optimization.html) for minified
+  JavaScript in production
+* [Backbone.js](http://backbonejs.org) for models, views and routers
 * [Hogan.js](http://twitter.github.com/hogan.js/) for
   [Mustache](http://mustache.github.com/) templates that can be
   precompiled to JavaScript in production
 * [Jasmine](http://pivotal.github.com/jasmine/) for tests
 * [Sinon](http://sinonjs.org) for test spies, stubs and mocks
+* [Saga](http://timurstrekalov.github.com/saga/) for code coverage
 
 Templates
 ---------
 
-To easily include plugins we use a
+To easily include templates we use a
 [Require.js Hogan plugin](https://github.com/millermedeiros/requirejs-hogan-plugin). 
 
 Lets say we create the following Mustache file, `foo.mustache`:
