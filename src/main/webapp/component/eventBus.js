@@ -6,7 +6,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         return function() {
             events[name].apply(events, arguments);
         }
-    }
+    };
 
     return {
         on: eventProxy("on"),
