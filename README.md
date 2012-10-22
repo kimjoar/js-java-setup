@@ -11,12 +11,6 @@ This is an opinionated sample setup of a Java project which uses:
 * [Jasmine](http://pivotal.github.com/jasmine/) for tests
 * [Sinon](http://sinonjs.org) for test spies, stubs and mocks
 
-Modules
--------
-
-Components
-----------
-
 Templates
 ---------
 
@@ -90,3 +84,10 @@ node src/main/scripts/r.js -o src/main/config/buildconfig.js optimize=uglify
 
 (This is better for debugging, as it usually yields far better error
 messages than those produced when Java is used to minify the code.)
+
+TODO
+====
+
+* Test Coverage
+* Created by
+* License
