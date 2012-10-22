@@ -62,6 +62,32 @@
                     <customRunnerTemplate>${basedir}/src/test/js/SpecRunner.html</customRunnerTemplate>
                     <scriptLoaderPath>../../../../src/main/webapp/vendor/require.js</scriptLoaderPath>
                     <format>progress</format>
+                    <specIncludes><include>**/*Spec.js</include></specIncludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.timurstrekalov</groupId>
+                <artifactId>saga-maven-plugin</artifactId>
+                <version>1.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>coverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <baseDir>${project.build.directory}/jasmine/</baseDir>
+                    <includes>
+                        SpecRunner.html
+                    </includes>
+                    <noInstrumentPatterns>
+                        <pattern>.+/vendor/.+</pattern>
+                        <pattern>.+Spec\.js</pattern>
+                    </noInstrumentPatterns>
+                    <outputDir>${project.build.directory}/coverage</outputDir>
                 </configuration>
             </plugin>
         </plugins>
