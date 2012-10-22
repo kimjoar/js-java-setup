@@ -43,6 +43,27 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>com.github.searls</groupId>
+                <artifactId>jasmine-maven-plugin</artifactId>
+                <version>1.2.0.0</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jsSrcDir>${basedir}/src/main/webapp</jsSrcDir>
+                    <jsTestSrcDir>${basedir}/src/test/js/</jsTestSrcDir>
+                    <specRunnerTemplate>REQUIRE_JS</specRunnerTemplate>
+                    <customRunnerTemplate>${basedir}/src/test/js/SpecRunner.html</customRunnerTemplate>
+                    <scriptLoaderPath>../../../../src/main/webapp/vendor/require.js</scriptLoaderPath>
+                    <format>progress</format>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
