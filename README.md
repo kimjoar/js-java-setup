@@ -88,6 +88,6 @@ messages than those produced when Java is used to minify the code.)
 TODO
 ====
 
-* Test Coverage
+* Test Coverage (only shows files that are included in the _tests_)
 * Created by
 * License
