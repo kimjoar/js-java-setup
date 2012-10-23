@@ -5,6 +5,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
     };
 
     _.extend(EventBinder.prototype, {
+
         bindTo: function(obj, eventName, callback, context) {
             context = context || this;
             obj.on(eventName, callback, context);

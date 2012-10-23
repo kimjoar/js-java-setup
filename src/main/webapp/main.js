@@ -1,4 +1,5 @@
 requirejs.config({
+
     paths: {
         'jquery': 'vendor/jquery',
         'underscore': 'vendor/underscore',

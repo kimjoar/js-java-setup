@@ -5,6 +5,7 @@ define(['underscore', 'backbone', 'router', 'section', 'jquery'], function(_, Ba
     };
 
     _.extend(App.prototype, {
+
         addSections: function(sections) {
             this.sections = this.sections || {};
 

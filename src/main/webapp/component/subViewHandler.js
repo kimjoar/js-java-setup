@@ -5,6 +5,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
     };
 
     _.extend(SubViewHandler.prototype, {
+
         addSubView: function(subView) {
             var subViewAlreadyExists = _.find(this.subViews, function(view) {
                 return subView === view;
@@ -17,6 +18,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
             return subViewAlreadyExists;
         },
+
         destroyAllSubViews: function() {
             _.invoke(this.subViews, "destroy");
 
