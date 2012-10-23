@@ -72,6 +72,13 @@ should be
 [quite easy](https://github.com/SlexAxton/require-handlebars-plugin)
 to include instead of Hogan.js.)
 
+Test Coverage
+-------------
+
+Test coverage is useful for finding untested parts of a codebase. We
+have included [Saga](http://timurstrekalov.github.com/saga/), which is a
+great test coverage tool for JavaScript implemented in Java.
+
 Minify
 ------
 
