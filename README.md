@@ -133,5 +133,7 @@ Code licensed under the MIT License.
 TODO
 ====
 
-* Versioning of app.js, either in file name or by appending a query
-  param
+* Creating an index.html for production which include cache busting for
+  the minified JavaScript (instead of having a separate index.html in
+  the build folder as we do now)
+* Ensure that only the minified JS is included in production
