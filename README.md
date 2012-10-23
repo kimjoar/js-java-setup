@@ -66,6 +66,11 @@ require(['hgn!foo'], function(foo) {
 During optimization the templates will be pre-compiled and stored as
 pure JavaScript for better performance.
 
+(If [Handlebars.js](http://handlebarsjs.com/) is your cup of tea, it
+should be
+[quite easy](https://github.com/SlexAxton/require-handlebars-plugin)
+to include instead of Hogan.js.)
+
 Minify
 ------
 
