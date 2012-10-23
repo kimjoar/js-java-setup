@@ -16,15 +16,12 @@
     // Eval is needed because spec variable can be NOTHING, and the output will be ; and break the javascript
     var specs = eval($specs$);
 
+    var testPath = "/src/test/js/";
     if ("$reporter$" === "JsApiReporter") {
         // mvn test
-        testPath = "../../../src/";
-    } else {
-        // mvn jasmine:bdd
-        testPath = "../../";
+        testPath = "../spec/";
     }
 
-    testPath += "test/js/";
 
     var requireConfig = {
         baseUrl: '$sourceDir$',
