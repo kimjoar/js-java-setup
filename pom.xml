@@ -57,10 +57,10 @@
                 </executions>
                 <configuration>
                     <jsSrcDir>${basedir}/src/main/webapp</jsSrcDir>
-                    <jsTestSrcDir>${basedir}/src/test/js/</jsTestSrcDir>
+                    <jsTestSrcDir>${basedir}/src/test/js</jsTestSrcDir>
                     <specRunnerTemplate>REQUIRE_JS</specRunnerTemplate>
                     <customRunnerTemplate>${basedir}/src/test/js/SpecRunner.html</customRunnerTemplate>
-                    <scriptLoaderPath>../../../../src/main/webapp/vendor/require.js</scriptLoaderPath>
+                    <scriptLoaderPath>vendor/require.js</scriptLoaderPath>
                     <format>progress</format>
                     <specIncludes><include>**/*Spec.js</include></specIncludes>
                 </configuration>
