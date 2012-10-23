@@ -77,7 +77,10 @@ Test Coverage
 
 Test coverage is useful for finding untested parts of a codebase. We
 have included [Saga](http://timurstrekalov.github.com/saga/), which is a
-great test coverage tool for JavaScript implemented in Java.
+great Java-based test coverage tool for JavaScript. Saga generates test
+coverage reports in both HTML and dat format. The latter can be read by
+[Sonar](http://www.sonarsource.org/). Both files can be found in the
+`target/coverage` folder after a build.
 
 Minify
 ------
