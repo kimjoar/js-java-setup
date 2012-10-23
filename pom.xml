@@ -95,6 +95,35 @@
                     </sourcesToPreload>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <apply dir="${basedir}/src/test/js/vendor/" executable="java" parallel="true" failonerror="true">
+                                    <fileset dir="${basedir}/src/main/webapp/" excludes="vendor/**, build/**" includes="**/*.js" />
+                                    <arg line="-jar ${settings.localRepository}/rhino/js/1.7R2/js-1.7R2.jar"/>
+                                    <arg line="${basedir}/src/test/js/vendor/rhino-js-hint.js" />
+                                </apply>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>rhino</groupId>
+                        <artifactId>js</artifactId>
+                        <version>1.7R2</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 </project>
