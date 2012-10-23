@@ -80,8 +80,9 @@ have included [Saga](http://timurstrekalov.github.com/saga/), which is a
 great Java-based test coverage tool for JavaScript. Saga generates test
 coverage reports in both HTML and LCOV format. The latter is named
 `total-coverage.dat` and can be read by
-[Sonar](http://www.sonarsource.org/). Both files can be found in the
-`target/coverage` folder after a build.
+[Sonar](http://www.sonarsource.org/) (the file might need to be
+[renamed first](http://sonar.15.n6.nabble.com/JavaScript-Plugin-Code-Coverage-td5000746.html)).
+Both files can be found in the `target/coverage` folder after a build.
 
 Minify
 ------
