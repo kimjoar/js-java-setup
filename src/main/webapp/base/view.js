@@ -25,7 +25,9 @@ define([
             },
 
             renderTemplate: function(data) {
-                if (!_.isFunction(this.template)) return;
+                if (!_.isFunction(this.template)) {
+                    return;
+                }
                 var html = this.template(data);
                 this.$el.html(html);
             }

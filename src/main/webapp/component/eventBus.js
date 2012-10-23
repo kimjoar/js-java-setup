@@ -5,7 +5,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
     var eventProxy = function(name) {
         return function() {
             events[name].apply(events, arguments);
-        }
+        };
     };
 
     return {
@@ -15,6 +15,6 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         reset: function() {
             events.off();
         }
-    }
+    };
 
 });

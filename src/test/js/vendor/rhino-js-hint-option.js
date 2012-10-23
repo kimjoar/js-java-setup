@@ -1,4 +1,6 @@
-var JSHINT_MERCY = 60;
+// Have no mercy (this option let's you specify how many JSHint errors
+// are allowed before the build breaks)
+var JSHINT_MERCY = 0;
 
 var JSLINT_OPTIONS = {
 

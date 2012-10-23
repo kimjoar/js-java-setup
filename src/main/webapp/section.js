@@ -23,7 +23,9 @@ define(['underscore'], function(_) {
         },
 
         close: function() {
-            if (!this.currentView) return;
+            if (!this.currentView) {
+                return;
+            }
 
             this.currentView.destroy();
 
