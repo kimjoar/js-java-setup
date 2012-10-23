@@ -133,4 +133,5 @@ Code licensed under the MIT License.
 TODO
 ====
 
-* Test Coverage
+* Versioning of app.js, either in file name or by appending a query
+  param
