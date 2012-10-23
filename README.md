@@ -91,7 +91,7 @@ The code is minified by using the
 [requirejs-maven-plugin](https://github.com/mcheely/requirejs-maven-plugin).
 The plugin uses [r.js](https://github.com/jrburke/r.js) with the 
 buildconfig specified in
-[buildconfig.js](https://github.com/kjbekkelund/requirejs-java/blob/master/src/main/config/buildconfig.js).
+[buildconfig.js](https://github.com/kjbekkelund/js-java-setup/blob/master/src/main/config/buildconfig.js).
 
 The minified code uses [Almond](https://github.com/jrburke/almond)
 instead of Require.js, as a full AMD loader is not needed for the
