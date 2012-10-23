@@ -2,6 +2,7 @@
 // are allowed before the build breaks)
 var JSHINT_MERCY = 0;
 
+// You'll find the allowed options at http://www.jshint.com/docs/
 var JSLINT_OPTIONS = {
 
     // Environments
