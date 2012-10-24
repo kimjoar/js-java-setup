@@ -2,7 +2,7 @@ define([
     'base/view',
     'modules/user/userDetailView',
     'hgn!modules/user/user',
-    'components/eventBus'
+    'component/eventBus'
 ], function(View, UserDetailView, userTemplate, events) {
 
     var UserView = View.extend({
