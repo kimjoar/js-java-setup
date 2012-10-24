@@ -36,9 +36,6 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         }
     });
 
-    // Copy the `extend` function used by Backbone's classes
-    EventBinder.extend = Backbone.View.extend;
-
     return EventBinder;
 
 });

@@ -11,24 +11,35 @@ define([
 
             constructor: function() {
                 var eventBinder = new EventBinder();
-                var subViewHandler = new SubViewHandler();
                 _.extend(this, eventBinder);
+
+                var subViewHandler = new SubViewHandler();
                 _.extend(this, subViewHandler);
 
                 Backbone.View.prototype.constructor.apply(this, arguments);
             },
 
             destroy: function() {
+                // Unbind all events bound in the view, i.e. those bound
+                // with `this.bindTo`
                 this.unbindAll();
+
+                // Unbind all events that are bound to the view, i.e.
+                // those bound with `this.on`
+                this.off();
+
+                // Remove the view from the DOM
                 this.remove();
-                this.destroyAllSubViews();
+
+                // Recusively destroy all subviews
+                this.destroySubViews();
             },
 
             renderTemplate: function(data) {
                 if (!_.isFunction(this.template)) {
                     return;
                 }
-                var html = this.template(data);
+                var html = this.template(data || {});
                 this.$el.html(html);
             }
 

@@ -1,4 +1,8 @@
-define(['backbone', 'modules/user/userView'], function(Backbone, UserView) {
+define([
+    'backbone',
+    'modules/user/userView',
+    'modules/user/user'
+], function(Backbone, UserView, User) {
 
     var Router = Backbone.Router.extend({
 
@@ -11,7 +15,8 @@ define(['backbone', 'modules/user/userView'], function(Backbone, UserView) {
         },
 
         showUser: function() {
-            var userView = new UserView();
+            var user = new User();
+            var userView = new UserView({ user: user });
             userView.render();
 
             this.sections.main.show(userView);
