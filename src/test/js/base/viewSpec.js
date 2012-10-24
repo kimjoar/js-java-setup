@@ -1,4 +1,4 @@
-define(['base/view', 'sinon', 'component/eventBus'], function(View, sinon, events) {
+define(['base/view', 'sinon', 'component/eventBus', 'jquery'], function(View, sinon, events, $) {
 
     describe('View', function() {
 
@@ -46,6 +46,42 @@ define(['base/view', 'sinon', 'component/eventBus'], function(View, sinon, event
                 events.trigger("test");
 
                 expect(spy).not.toHaveBeenCalled();
+            });
+
+            it('unbinds delegate events', function() {
+                var spy = sinon.spy();
+
+                var TestView = View.extend({
+                    events: {
+                        'click': spy
+                    }
+                });
+
+                var testView = new TestView();
+                testView.destroy();
+
+                testView.$el.click();
+
+                expect(spy).not.toHaveBeenCalled();
+            });
+
+            it('removes the view from the DOM', function() {
+                var DOM = $('<div></div>');
+
+                var TestView = View.extend({
+                    className: 'someClass',
+                    tagName: 'h1'
+                });
+
+                var testView = new TestView();
+
+                DOM.append(testView.el);
+
+                expect(DOM.html()).toEqual('<h1 class="someClass"></h1>');
+
+                testView.destroy();
+
+                expect(DOM.html()).toEqual('');
             });
 
         });
