@@ -48,7 +48,7 @@ define(['base/view', 'sinon', 'component/eventBus', 'jquery'], function(View, si
                 expect(spy).not.toHaveBeenCalled();
             });
 
-            it('unbinds delegate events', function() {
+            it('unbinds delegated events', function() {
                 var spy = sinon.spy();
 
                 var TestView = View.extend({
