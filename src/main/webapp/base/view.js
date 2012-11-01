@@ -35,12 +35,18 @@ define([
                 this.destroySubViews();
             },
 
-            renderTemplate: function(data) {
-                if (!_.isFunction(this.template)) {
-                    return;
-                }
-                var html = this.template(data || {});
+            renderTemplate: function() {
+                var data = {};
+                _.each(arguments, function(arg) {
+                    _.extend(data, arg);
+                });
+
+                var html = this.parseTemplate(this.template, data);
                 this.$el.html(html);
+            },
+
+            parseTemplate: function(template, data) {
+                return template(data);
             }
 
         });
