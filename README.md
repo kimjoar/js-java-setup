@@ -100,25 +100,14 @@ Burke](https://github.com/jrburke), the creator of Require.js, and is a
 minimal AMD API implementation with a minified and gzipped size of about
 1 kilobyte.
 
-The minified JavaScript code is put in `src/main/webapp/build/app.js`.
-To ensure that everything is working, open
-`src/main/webapp/build/index.html` in the browser. We only need to
-include `app.js` when the code is minified, i.e.
+The minified JavaScript code is put in the `build` folder in the target.
+To ensure that everything is working, open the `index.html` in the
+`build` folder in the browser. We only need to include `app.js` when the
+code is minified, i.e.
 
 ```html
 <script type="text/javascript" src="app.js"></script>
 ```
-
-### Minify with Node.js
-
-This setup can also be minified using Node.js:
-
-```
-node src/main/scripts/r.js -o src/main/config/buildconfig.js optimize=uglify
-```
-
-(This is better for debugging, as it usually yields far better error
-messages than those produced when Java is used to minify the code.)
 
 Created by
 ----------
