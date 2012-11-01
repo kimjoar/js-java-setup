@@ -2,6 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.kjbekkelund</groupId>
     <artifactId>requirejs-setup</artifactId>
+    <packaging>war</packaging>
     <version>0.0.1</version>
     <name>RequireJS setup for Java</name>
 
@@ -124,6 +125,15 @@
                         <version>1.7R4</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-war-plugin</artifactId>
+              <version>2.3</version>
+              <configuration>
+                <packagingIncludes>build/*</packagingIncludes>
+              </configuration>
             </plugin>
         </plugins>
     </build>
