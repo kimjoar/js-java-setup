@@ -8,6 +8,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
+        <buildNumber>${maven.build.timestamp}</buildNumber>
     </properties>
 
     <build>
@@ -133,6 +135,16 @@
                 <version>2.3</version>
                 <configuration>
                     <packagingIncludes>build/*</packagingIncludes>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp/build</directory>
+                            <includes>
+                                <include>**/*.html</include>
+                            </includes>
+                            <filtering>true</filtering>
+                            <targetPath>build</targetPath>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>
