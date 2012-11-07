@@ -106,6 +106,22 @@ code is minified, i.e.
 <script type="text/javascript" src="app.js"></script>
 ```
 
+Index file and cache busting
+----------------------------
+
+This setup has a very simplified handling of the index file. It's
+basically just serves the JavaScript non-minified using Require.js when
+the system property `env` is set to `development`, e.g. to see it up and
+running:
+
+    $ mvn jetty:run -Denv=development
+
+Otherwise it serves the minified JavaScript file, which includes
+timestamp for cache busting, which is put in when the file is packaged
+into a war, e.g. to see it up and running:
+
+    $ mvn jetty:run-war
+
 Created by
 ----------
 
