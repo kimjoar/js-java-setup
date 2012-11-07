@@ -20,16 +20,19 @@ requirejs.config({
     }
 });
 
-define(['app', 'jquery'], function(App, $) {
+define(['modules/app/app', 'jquery', 'backbone'], function(App, $, Backbone) {
 
-    var app = new App($("body"));
+    var app = new App({ el: $("body") });
 
     app.addSections({
         "nav": "#nav",
         "main": "#main"
     });
 
-    app.run();
-
+    $(document).ready(function() {
+        app.run(function() {
+            Backbone.history.start();
+        });
+    });
 });
 

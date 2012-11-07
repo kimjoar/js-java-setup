@@ -1,10 +1,15 @@
-define(['underscore', 'backbone', 'router', 'section', 'jquery'], function(_, Backbone, Router, Section, $) {
+define([
+   'underscore',
+   'router',
+   'section',
+   'jquery',
+   'base/view',
+   'hgn!modules/app/app'
+], function(_, Router, Section, $, View, appTemplate) {
 
-    var App = function($el) {
-        this.$el = $el;
-    };
+    var App = View.extend({
 
-    _.extend(App.prototype, {
+        template: appTemplate,
 
         addSections: function(sections) {
             this.sections = this.sections || {};
@@ -14,12 +19,12 @@ define(['underscore', 'backbone', 'router', 'section', 'jquery'], function(_, Ba
             }, this);
         },
 
-        run: function() {
+        run: function(done) {
+            this.renderTemplate();
+
             var router = new Router(this.sections);
 
-            $(function() {
-                Backbone.history.start();
-            });
+            done();
         }
     });
 
