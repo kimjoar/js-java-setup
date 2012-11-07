@@ -1,4 +1,5 @@
 requirejs.config({
+    urlArgs: 'v=' + Math.random(),
 
     paths: {
         'jquery': 'vendor/jquery',
