@@ -132,11 +132,3 @@ used in this toolchain. You make the Java world far more bearable.
 
 Unless otherwise noted, the code in this repo is in the
 [public domain](https://github.com/kjbekkelund/js-java-setup/blob/master/UNLICENSE).
-
-TODO
-====
-
-* Creating an index.html for production which include cache busting for
-  the minified JavaScript (instead of having a separate index.html in
-  the build folder as we do now)
-* Ensure that only the minified JS is included in production
