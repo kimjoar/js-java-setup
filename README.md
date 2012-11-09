@@ -26,49 +26,6 @@ This is an opinionated sample setup of a Java project which uses:
 * [JSHint](http://www.jshint.com/) to detect problems and errors in the
   JavaScript code
 
-Templates
----------
-
-To easily include templates we use a
-[Require.js Hogan plugin](https://github.com/millermedeiros/requirejs-hogan-plugin). 
-
-Lets say we create the following Mustache file, `foo.mustache`:
-
-```mustache
-<div class="foo">
-    <h1>{{title}}</h1>
-    <ul>
-        {{#names}}
-        <li>{{.}}</li>
-        {{/names}}
-    </ul>
-</div>
-```
-
-We can then load it using the `hgn` command:
-
-```javascript
-// this will load the "foo.mustache" file
-require(['hgn!foo'], function(foo) {
-    // the plugin returns the `render()` method of the `Hogan.Template`
-
-    var markup = foo({
-        title : 'Hello!',
-        names : ['world', 'foo bar', 'lorem ipsum']
-    });
-
-    console.log(markup);
-});
-```
-
-During optimization the templates will be pre-compiled and stored as
-pure JavaScript for better performance.
-
-(If [Handlebars.js](http://handlebarsjs.com/) is your cup of tea, it
-should be
-[quite easy](https://github.com/SlexAxton/require-handlebars-plugin)
-to include instead of Hogan.js.)
-
 Test Coverage
 -------------
 
@@ -122,6 +79,135 @@ into a war, e.g. to see it up and running:
 
     $ mvn jetty:run-war
 
+Templates
+---------
+
+To easily include templates we use a
+[Require.js Hogan plugin](https://github.com/millermedeiros/requirejs-hogan-plugin). 
+
+Lets say we create the following Mustache file, `foo.mustache`:
+
+```mustache
+<div class="foo">
+    <h1>{{title}}</h1>
+    <ul>
+        {{#names}}
+        <li>{{.}}</li>
+        {{/names}}
+    </ul>
+</div>
+```
+
+We can then load it using the `hgn` command:
+
+```javascript
+// this will load the "foo.mustache" file
+require(['hgn!foo'], function(foo) {
+    // the plugin returns the `render()` method of the `Hogan.Template`
+
+    var markup = foo({
+        title : 'Hello!',
+        names : ['world', 'foo bar', 'lorem ipsum']
+    });
+
+    console.log(markup);
+});
+```
+
+During optimization the templates will be pre-compiled and stored as
+pure JavaScript for better performance.
+
+(If [Handlebars.js](http://handlebarsjs.com/) is your cup of tea, it
+should be
+[quite easy](https://github.com/SlexAxton/require-handlebars-plugin)
+to include instead of Hogan.js.)
+
+Backbone
+--------
+
+This setup contains an example of an initial setup of a Backbone.js
+application, which solves some of the regular Backbone.js troubles
+people run into.
+
+### Memory leaks
+
+Most Backbone.js applications have memory leaks because of events. If
+you have code like this you might have problems:
+
+```javascript
+var UserView = Backbone.View.extend({
+    initialize: function() {
+        this.model.on("change", this.render, this);
+    },
+    render: function() {
+        // ...
+    }
+})
+```
+
+When you show and then remove this view from the DOM, it's easy to
+forget to remove the bound events on the model. And if you forget to do
+that it's quite likely that your views won't be garbage collected, which
+leads to memory leaks.
+
+You find a potential solution in
+[eventBinder.js](https://github.com/kjbekkelund/js-java-setup/blob/master/src/main/webapp/js/component/eventBinder.js),
+which is used by
+`destroy` in
+[view.js](https://github.com/kjbekkelund/js-java-setup/blob/master/src/main/webapp/js/base/view.js).
+
+Now, instead of using `on`, you would use `bindTo`:
+
+```javascript
+var UserView = Backbone.View.extend({
+    initialize: function() {
+        this.bindTo(model, "change", this.render, this);
+    },
+    render: function() {
+        // ...
+    }
+})
+```
+
+When calling `destroy` on the view, the event is automatically removed.
+
+It is also important to recursively destroy subviews. This is
+automatically done by `destroy` when `addSubView` is used on these
+subviews, e.g.
+
+```javascript
+renderUserDetails: function() {
+  var userDetailView = new UserDetailView({ el: el });
+  this.addSubView(userDetailView);
+  userDetailView.render();            
+}
+```
+
+### Templates for views
+
+There are many ways to solve views in Backbone. As already explained, we
+use Hogan.js with a Require.js plugin, which enable us to add templates
+as follows:
+
+```javascript
+define(['base/view', 'hgn!modules/user/user'], function(View, userTemplate) {
+
+    var UserView = View.extend({
+
+        template: userTemplate,
+
+        render: function() {
+            this.renderTemplate();
+        }
+
+    });
+
+});
+```
+
+You'll find `renderTemplate` in
+[view.js](https://github.com/kjbekkelund/js-java-setup/blob/master/src/main/webapp/js/base/view.js).
+                                         
 Created by
 ----------
 
