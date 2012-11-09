@@ -22,7 +22,7 @@ define([
         run: function(done) {
             this.renderTemplate();
 
-            var router = new Router(this.sections);
+            this.router = new Router(this.sections);
 
             done();
         }
