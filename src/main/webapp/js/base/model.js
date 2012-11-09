@@ -1,6 +1,10 @@
-define(['backbone'], function(Backbone) {
+define(['backbone', 'component/sync'], function(Backbone, sync) {
 
-    var Model = Backbone.Model.extend({});
+    var Model = Backbone.Model.extend({
+
+        sync: sync
+
+    });
 
     return Model;
 
