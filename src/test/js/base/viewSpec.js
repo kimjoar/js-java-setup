@@ -2,6 +2,50 @@ define(['base/view', 'sinon', 'component/eventBus', 'jquery'], function(View, si
 
     describe('View', function() {
 
+        describe('render template', function() {
+
+            var testView, template;
+
+            beforeEach(function() {
+                template = sinon.mock();
+
+                var TestView = View.extend({
+                    template: template
+                });
+
+                testView = new TestView();
+            });
+
+            it('accepts a template specified as a function', function() {
+                template.returns('<h1>TestView</h1>');
+
+                testView.renderTemplate();
+
+                expect(testView.$('h1').text()).toEqual('TestView');
+            });
+
+            it('passes input to the template function', function() {
+                var data = { key: "value" };
+
+                testView.renderTemplate(data);
+
+                expect(testView.template).toHaveBeenCalledWith(data);
+            });
+
+            it('combines several input arguments', function() {
+                testView.renderTemplate({ key: "value" }, { key2: "value2" });
+
+                var call = testView.template.firstCall;
+
+                var args = call.args;
+
+                expect(args.length).toEqual(1);
+                expect(args[0].key).toEqual("value");
+                expect(args[0].key2).toEqual("value2");
+            });
+
+        });
+
         describe('destroy', function() {
 
             it('unbinds all events bound by the view', function() {
