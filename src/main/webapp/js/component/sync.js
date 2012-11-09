@@ -1,4 +1,4 @@
-define(['backbone'], function(Backbone) {
+define(['backbone', 'underscore'], function(Backbone, _) {
 
     var baseUrl = "/rest";
 
@@ -13,6 +13,6 @@ define(['backbone'], function(Backbone) {
         options.url = baseUrl + url;
 
         Backbone.sync.apply(this, arguments);
-    }
+    };
 
 });
