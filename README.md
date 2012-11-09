@@ -202,6 +202,8 @@ define(['base/view', 'hgn!modules/user/user'], function(View, userTemplate) {
 
     });
 
+    return UserView;
+
 });
 ```
 
