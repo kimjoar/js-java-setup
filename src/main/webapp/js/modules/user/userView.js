@@ -13,9 +13,9 @@ define([
             this.user = options.user;
 
             // don't write this
-            this.user.on("change", this.render, this);
+            // this.user.on("change", this.render, this);
 
-            // write this instead
+            // write this instead (see component/eventBinder.js)
             this.bindTo(this.user, "change", this.render, this);
 
             // or this to bind to global events
@@ -23,7 +23,7 @@ define([
         },
 
         render: function() {
-            this.renderTemplate();
+            this.renderTemplate(this.user.toJSON());
             this.renderUserDetail(this.$el.find(".user-detail"));
         },
 

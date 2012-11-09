@@ -11,10 +11,10 @@ define([
         },
 
         routes: {
-            '': 'showUser'
+            '': 'user'
         },
 
-        showUser: function() {
+        user: function() {
             var user = new User();
             var userView = new UserView({ user: user });
             userView.render();
