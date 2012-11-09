@@ -7,6 +7,7 @@ define(['underscore'], function(_) {
 
     _.extend(Section.prototype, {
         show: function(view) {
+            this.close();
             this.ensureEl();
             this.open(view);
             this.currentView = view;
@@ -23,13 +24,10 @@ define(['underscore'], function(_) {
         },
 
         close: function() {
-            if (!this.currentView) {
-                return;
+            if (this.currentView) {
+                this.currentView.destroy();
+                delete this.currentView;
             }
-
-            this.currentView.destroy();
-
-            delete this.currentView;
         }
     });
 
