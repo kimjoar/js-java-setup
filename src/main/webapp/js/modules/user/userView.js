@@ -13,18 +13,18 @@ define([
             this.user = options.user;
 
             // don't write this
-            // this.user.on("change", this.render, this);
+            // this.user.on('change', this.render, this);
 
             // write this instead (see component/eventBinder.js)
-            this.bindTo(this.user, "change", this.render, this);
+            this.bindTo(this.user, 'change', this.render, this);
 
             // or this to bind to global events
-            this.bindTo(events, "global", this.render, this);
+            this.bindTo(events, 'global', this.render, this);
         },
 
         render: function() {
             this.renderTemplate(this.user.toJSON());
-            this.renderUserDetail(this.$(".user-detail"));
+            this.renderUserDetail(this.$('.user-detail'));
         },
 
         renderUserDetail: function(el) {

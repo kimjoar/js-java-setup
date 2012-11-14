@@ -1,6 +1,6 @@
 define(['backbone', 'underscore'], function(Backbone, _) {
 
-    var baseUrl = "/rest";
+    var baseUrl = '/rest';
 
     var urlError = function() {
         throw new Error('A "url" property or function must be specified');

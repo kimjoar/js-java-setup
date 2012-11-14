@@ -9,9 +9,9 @@ define(['underscore', 'backbone'], function(_, Backbone) {
     };
 
     return {
-        on: eventProxy("on"),
-        off: eventProxy("off"),
-        trigger: eventProxy("trigger"),
+        on: eventProxy('on'),
+        off: eventProxy('off'),
+        trigger: eventProxy('trigger'),
         reset: function() {
             events.off();
         }
