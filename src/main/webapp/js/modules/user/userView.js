@@ -24,7 +24,7 @@ define([
 
         render: function() {
             this.renderTemplate(this.user.toJSON());
-            this.renderUserDetail(this.$el.find(".user-detail"));
+            this.renderUserDetail(this.$(".user-detail"));
         },
 
         renderUserDetail: function(el) {
