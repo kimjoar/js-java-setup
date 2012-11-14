@@ -112,7 +112,7 @@
                         <configuration>
                             <target>
                                 <apply dir="${basedir}/src/main/scripts/" executable="java" parallel="true" failonerror="true">
-                                    <fileset dir="${basedir}/src/main/webapp/js/" excludes="vendor/**, build/**" includes="**/*.js" />
+                                    <fileset dir="${basedir}/src/main/webapp/js/" excludes="vendor/**" includes="**/*.js" />
                                     <arg line="-jar ${settings.localRepository}/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar"/>
                                     <arg line="${basedir}/src/main/scripts/rhino-js-hint.js" />
                                 </apply>
