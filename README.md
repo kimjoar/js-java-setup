@@ -210,6 +210,16 @@ define(['base/view', 'hgn!modules/user/user'], function(View, userTemplate) {
 
 You'll find `renderTemplate` in
 [view.js](https://github.com/kjbekkelund/js-java-setup/blob/master/src/main/webapp/js/base/view.js).
+
+JSHint
+------
+
+The JSHint config can be found in
+[jshint-options.js](https://github.com/kjbekkelund/js-java-setup/blob/master/src/main/config/jshint-options.js).
+You can find all the potential options in the
+[JSHint docs](http://www.jshint.com/docs/). The settings default to
+breaking the build on any JSHint errors. If you want to be more lenient,
+you can choose how many errors to allow via the `JSHINT_MERCY` value.
                                          
 Created by
 ----------
