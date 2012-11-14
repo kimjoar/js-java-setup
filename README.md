@@ -127,7 +127,8 @@ Backbone
 
 This setup contains an example of an initial setup of a Backbone.js
 application, which solves some of the regular Backbone.js troubles
-people run into.
+people run into. It should be quite simple to remove Backbone, but keep
+the rest of the setup.
 
 ### Memory leaks
 
