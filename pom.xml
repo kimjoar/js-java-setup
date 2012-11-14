@@ -3,7 +3,7 @@
     <groupId>com.github.kjbekkelund</groupId>
     <artifactId>requirejs-setup</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
     <name>RequireJS setup for Java</name>
 
     <properties>
