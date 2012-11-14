@@ -111,10 +111,10 @@
                         </goals>
                         <configuration>
                             <target>
-                                <apply dir="${basedir}/src/test/js/vendor/" executable="java" parallel="true" failonerror="true">
+                                <apply dir="${basedir}/src/main/scripts/" executable="java" parallel="true" failonerror="true">
                                     <fileset dir="${basedir}/src/main/webapp/js/" excludes="vendor/**, build/**" includes="**/*.js" />
                                     <arg line="-jar ${settings.localRepository}/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar"/>
-                                    <arg line="${basedir}/src/test/js/vendor/rhino-js-hint.js" />
+                                    <arg line="${basedir}/src/main/scripts/rhino-js-hint.js" />
                                 </apply>
                             </target>
                         </configuration>

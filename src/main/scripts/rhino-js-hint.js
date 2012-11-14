@@ -1,5 +1,5 @@
 load("jshint.js");
-load("rhino-js-hint-option.js");
+load("../config/jshint-options.js");
 
 (function rhinoJSHint(args) {
 
