@@ -1,11 +1,11 @@
 define([
    'underscore',
    'router',
-   'section',
    'jquery',
    'base/view',
+   'component/section',
    'hgn!modules/app/app'
-], function(_, Router, Section, $, View, appTemplate) {
+], function(_, Router, $, View, Section, appTemplate) {
 
     var App = View.extend({
 

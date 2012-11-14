@@ -1,4 +1,4 @@
-define(['section', 'base/view', 'jquery', 'sinon'], function(Section, View, $, sinon) {
+define(['component/section', 'base/view', 'jquery', 'sinon'], function(Section, View, $, sinon) {
 
     describe("Section", function() {
         describe("show a view", function() {

@@ -1,4 +1,4 @@
-define(['modules/app/app', 'section'], function(App, Section) {
+define(['modules/app/app', 'component/section'], function(App, Section) {
 
     describe('app', function() {
 
