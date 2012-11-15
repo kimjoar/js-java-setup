@@ -77,7 +77,7 @@ code is minified, i.e.
 Index file and cache busting
 ----------------------------
 
-This setup has a very simplified handling of the index file. It's
+This setup has a very simplified handling of the index file. It
 basically just serves the JavaScript non-minified using Require.js when
 the system property `env` is set to `development`, e.g. to see it up and
 running:
