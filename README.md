@@ -38,6 +38,17 @@ coverage reports in both HTML and LCOV format. The latter is named
 [renamed first](http://sonar.15.n6.nabble.com/JavaScript-Plugin-Code-Coverage-td5000746.html)).
 Both files can be found in the `target/coverage` folder after a build.
 
+Tests
+-----
+
+When developing the best way to run the tests is with:
+
+    mvn jasmine:bdd
+
+The tests are also run during the build, just try it with:
+
+    mvn clean test
+
 Minify
 ------
 
