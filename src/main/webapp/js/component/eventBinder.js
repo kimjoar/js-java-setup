@@ -10,12 +10,16 @@ define(['underscore', 'backbone'], function(_, Backbone) {
             context = context || this;
             obj.on(eventName, callback, context);
 
-            this.eventBindings.push({
+            var binding = {
                 obj: obj,
                 eventName: eventName,
                 callback: callback,
                 context: context
-            });
+            };
+
+            this.eventBindings.push(binding);
+
+            return binding;
         },
 
         // Unbind from a single binding object.
