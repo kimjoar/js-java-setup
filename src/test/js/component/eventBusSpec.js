@@ -33,6 +33,6 @@ define(['component/eventBus', 'sinon'], function(eventBus, sinon) {
 
             expect(spy1).not.toHaveBeenCalled();
             expect(spy2).not.toHaveBeenCalled();
-        })
+        });
     });
 });
