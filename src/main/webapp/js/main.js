@@ -7,7 +7,9 @@ requirejs.config({
         'backbone': 'vendor/backbone',
         'hogan': 'vendor/hogan',
         'hgn': 'vendor/plugin/hgn',
-        'text': 'vendor/plugin/text'
+        'text': 'vendor/plugin/text',
+        'handlebars': 'vendor/customHandlebars',
+        'hb': 'vendor/plugin/hb'
     },
 
     shim: {

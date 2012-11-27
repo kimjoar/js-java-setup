@@ -94,7 +94,8 @@ Templates
 ---------
 
 To easily include templates we use a
-[Require.js Hogan plugin](https://github.com/millermedeiros/requirejs-hogan-plugin). 
+[Require.js Hogan plugin](https://github.com/millermedeiros/requirejs-hogan-plugin) and a [RequireJS Handlebars Plugin](https://github.com/hinderberg/requirejs-handlebars-plugin).
+Each project would in most cases only use one template engine, so when you have chosen which one to use, just remove the other one.
 
 Lets say we create the following Mustache file, `foo.mustache`:
 
@@ -112,7 +113,7 @@ Lets say we create the following Mustache file, `foo.mustache`:
 We can then load it using the `hgn` command:
 
 ```javascript
-// this will load the "foo.mustache" file
+// this will load the "foo.mustache" file using the Hogan plugin
 require(['hgn!foo'], function(foo) {
     // the plugin returns the `render()` method of the `Hogan.Template`
 
@@ -128,10 +129,6 @@ require(['hgn!foo'], function(foo) {
 During optimization the templates will be pre-compiled and stored as
 pure JavaScript for better performance.
 
-(If [Handlebars.js](http://handlebarsjs.com/) is your cup of tea, it
-should be
-[quite easy](https://github.com/SlexAxton/require-handlebars-plugin)
-to include instead of Hogan.js.)
 
 Backbone
 --------
