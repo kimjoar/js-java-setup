@@ -18,7 +18,7 @@ This is an opinionated sample setup of a Java project which uses:
   JavaScript in production
 * [Backbone.js](http://backbonejs.org) for models, views and routers
 * [Hogan.js](http://twitter.github.com/hogan.js/) for
-  [Mustache](http://mustache.github.com/) templates that can be
+  [Mustache](http://mustache.github.com/) templates or [handlebars](http://handlebarsjs.com/), both can be
   precompiled to JavaScript in production
 * [Jasmine](http://pivotal.github.com/jasmine/) for tests
 * [Sinon](http://sinonjs.org) for test spies, stubs and mocks
