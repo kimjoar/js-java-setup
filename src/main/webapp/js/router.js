@@ -15,11 +15,11 @@ define([
         },
 
         user: function() {
-            var user = new User();
+            var user = new User({ name: "Testing", age: 26 });
             var userView = new UserView({ user: user });
-            user.set({ name: "Testing" });
 
             this.sections.main.show(userView);
+            userView.render();
         }
     });
 
