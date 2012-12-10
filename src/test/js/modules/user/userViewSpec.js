@@ -19,7 +19,14 @@ define(['modules/user/userView', 'modules/user/user'], function(UserView, User) 
         it('renders user details', function() {
             user.set({ name: name });
 
-            expect(userView.$(".user-detail").text()).toContain('subview');
+            expect(userView.$(".user-detail").text()).toNotBe('');
+        });
+
+        it('updates user detail view element on render', function() {
+            user.set({ name: name });
+            userView.render();
+
+            expect(userView.$(".user-detail").text()).toNotBe('');
         });
 
     });

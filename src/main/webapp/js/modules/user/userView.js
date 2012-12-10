@@ -28,8 +28,9 @@ define([
         },
 
         renderUserDetail: function(el) {
-            this.userDetailView = this.userDetailView || new UserDetailView({ el: el });
+            this.userDetailView = this.userDetailView || new UserDetailView({ user: this.user });
             this.addSubView(this.userDetailView);
+            this.userDetailView.setElement(el);
             this.userDetailView.render();
         }
 
