@@ -1,1 +1,1 @@
-<h2>This is a subview</h2>
+Age: {{age}}

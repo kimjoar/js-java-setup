@@ -4,10 +4,13 @@ define(['base/view', 'hb!modules/user/userDetail'], function(BaseView, userDetai
 
         template: userDetailTemplate,
 
-        render: function() {
-            this.renderTemplate();
+        initialize: function(options) {
+			this.user = options.user;
+			this.bindTo(this.user, "change:age", this.render, this);
+        },
 
-            return this;
+        render: function() {
+            this.renderTemplate(this.user.toJSON());
         }
 
     });
