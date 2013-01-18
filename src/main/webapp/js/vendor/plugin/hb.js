@@ -1,52 +1,68 @@
-/**@license
- * RequireJS Handlebars Plugin | v0.0.1
+/**
+ * @license
+ * RequireJS Handlebars Plugin | v0.0.2
  * Author: Hans Magnus Inderberg | MIT License
  * Inspired by the RequireJS Hogan Plugin
  */
-define(['handlebars', 'text'], function (handlebars, text) {
+
+define(['handlebars', 'text'], function(handlebars, text) {
 
     var DEFAULT_EXTENSION = '.hb';
     var _buildMap = {};
 
-    function load(name, req, onLoad, config){
+    function registerPartial(filePath, template) {
+        var fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
+        if (fileName.charAt(0) === '_') {
+            handlebars.registerPartial(filePath.replace(/\//g, '.'), template);
+        }
+    }
+
+    function load(filePath, req, onLoad, config) {
         var hbConfig = config.hb || {};
-        var fileName = name;
+        var fileName = filePath;
 
         if (hbConfig && hbConfig.templateExtension != null) {
-            fileName +=  hbConfig.templateExtension;
+            fileName += hbConfig.templateExtension;
         } else {
             fileName += DEFAULT_EXTENSION;
         }
 
-        text.get(req.toUrl(fileName), function(data){
+        text.get(req.toUrl(fileName), function(data) {
             if (config.isBuild) {
-                _buildMap[name] = handlebars.precompile(data);
+                _buildMap[filePath] = handlebars.precompile(data);
             }
 
             var template = handlebars.compile(data);
+            registerPartial(filePath, template);
 
-            onLoad( template );
+            onLoad(template);
         });
     }
 
     var _buildTemplate = handlebars.compile(
-        ['define("{{pluginName}}!{{moduleName}}", ["handlebars"], function(Handlebars) {',
-         '   return Handlebars.template({{{fn}}});',
-        '});\n'].join("\n"));
+        [
+            'define("{{pluginName}}!{{moduleName}}", ["handlebars"], function(handlebars) {',
+            '   var t = handlebars.template({{{fn}}});',
+            '   var partialFunction = {{{partialFunction}}};',
+            '   partialFunction("{{moduleName}}", t);',
+            '   return t;',
+            '});\n'
+        ].join("\n"));
 
-    function write(pluginName, moduleName, writeModule){
-        if(moduleName in _buildMap){
+    function write(pluginName, moduleName, writeModule) {
+        if (moduleName in _buildMap) {
             var fn = _buildMap[moduleName];
-            writeModule( _buildTemplate({
-                pluginName : pluginName,
-                moduleName : moduleName,
-                fn : fn
+            writeModule(_buildTemplate({
+                pluginName: pluginName,
+                moduleName: moduleName,
+                partialFunction: registerPartial.toString(),
+                fn: fn
             }));
         }
     }
 
     return {
-        load : load,
-        write : write
+        load: load,
+        write: write
     };
 });

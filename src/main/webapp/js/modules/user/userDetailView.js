@@ -1,4 +1,4 @@
-define(['base/view', 'hb!modules/user/userDetail'], function(BaseView, userDetailTemplate) {
+define(['base/view', 'hb!modules/user/userDetail', 'hb!modules/user/_userDetail'], function(BaseView, userDetailTemplate) {
 
     var UserDetailView = BaseView.extend({
 

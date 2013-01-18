@@ -16,6 +16,10 @@ define(['modules/user/userDetailView', 'modules/user/user'], function(UserDetail
             expect(userDetailView.$el.text()).toContain(age);
         });
 
+        it('renders partial', function() {
+            expect(userDetailView.$('.partial')).toNotBe('');
+        });
+
     });
 
 });

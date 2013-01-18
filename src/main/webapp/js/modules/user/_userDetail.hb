@@ -1,0 +1,1 @@
+<p class="partial">This is a partial</p>
