@@ -7,6 +7,12 @@ define(['underscore'], function(_) {
     _.extend(SubViewHandler.prototype, {
 
         addSubView: function(subView) {
+            // it's easy to add an undefined view if you forget
+            // to 'return this' in a render
+            if (_.isUndefined(subView)) {
+                throw "Subview can't be undefined";
+            }
+
             if (!_.contains(this.subViews, subView)) {
                 this.subViews.push(subView);
             }

@@ -32,6 +32,16 @@ define(['component/subViewHandler', 'sinon'], function(SubViewHandler, sinon) {
             expect(view.destroy).toHaveBeenCalledOnce();
         });
 
+        it('throws an exception when adding "undefined"', function() {
+            var subViewHandler = new SubViewHandler();
+
+            var add = function() {
+                subViewHandler.addSubView(undefined);
+            };
+
+            expect(add).toThrow();
+        });
+
     });
 
 });
