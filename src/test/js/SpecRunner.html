@@ -56,6 +56,13 @@
 
     require(specs, function() {
         window.reporter = new jasmine.$reporter$(); jasmine.getEnv().addReporter(reporter);
+
+        if ('$reporter$' === 'HtmlReporter') {
+            jasmine.getEnv().specFilter = function(spec) {
+                return reporter.specFilter(spec);
+            }
+        }
+
         jasmine.getEnv().execute();
     });
 </script>
