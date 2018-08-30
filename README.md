@@ -20,7 +20,7 @@ This is an opinionated sample setup of a Java project which uses:
 * [Hogan.js](http://twitter.github.com/hogan.js/) for
   [Mustache](http://mustache.github.com/) templates or [handlebars](http://handlebarsjs.com/), both can be
   precompiled to JavaScript in production
-* [Jasmine](http://pivotal.github.com/jasmine/) for tests
+* [Jasmine](https://jasmine.github.io/) for tests
 * [Sinon](http://sinonjs.org) for test spies, stubs and mocks
 * [Saga](http://timurstrekalov.github.com/saga/) for code coverage
 * [JSHint](http://www.jshint.com/) to detect problems and errors in the
